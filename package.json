@@ -1,5 +1,5 @@
 {
-    "name": "handlebars.moment",
+    "name": "handlebars.moment.timezone",
     "description": "Handlebars helpers for moment.js & add timezone setting",
     "version": "1.0.0",
     "main": "handlebars.moment.js",
@@ -19,9 +19,10 @@
         "timezone"
     ],
     "dependencies": {
-        "lodash": ">1.0.0",
         "handlebars": ">2.0.0",
-        "moment": ">2.7.0"
+        "lodash": ">1.0.0",
+        "moment": ">2.7.0",
+        "moment-timezone": "^0.5.39"
     },
     "devDependencies": {
         "jasmine-node": "^1.14.x",

@@ -1,13 +1,13 @@
 (function (moduleFactory) {
     if (typeof exports === "object") {
-        module.exports = moduleFactory(require("lodash"), require("moment"));
+        module.exports = moduleFactory(require("lodash"), require("moment"), require("moment-timezone"));
     } else if (typeof define === "function" && define.amd) {
         define(["lodash", "moment"], moduleFactory);
     } else if (typeof window !== 'undefined' && window != null && window.moment) {
         window.HandlebarsMoment = moduleFactory;
         // moduleFactory(_, moment);
     }
-}(function (_, moment) {
+}(function (_, moment, momentTZ) {
 /**
  * @module handlebars%moment
  * @description  Helpers providing [Moment.js](http://momentjs.com) functionality
@@ -65,6 +65,7 @@
          * @param {string|date} [date] Alternative date
          * @param {string} [format] Alternative format
          * @param {string} [input] Format to use to parse date
+         * @param {string} [tz] Specific timezone to use
          * @param {string} [lang] Specific locale to use
          * @param {number|string} [type] Type of weekday (L|S|XS|number)
          * @param {boolean} [suffix]
@@ -254,11 +255,14 @@
                 momentObj = momentFn(date, params.input);
                 // momentObj = momentFn(date, params.input).locale('zh-CN');
                 // momentObj = momentFn(date, params.input).locale('Asia/Shanghai');
-                console.log("-----------------localelocalelocalelocalelocalelocale----------------zh-c1111n")
             }
 
             if (params.lang) {
                 momentObj.locale(params.lang);
+            }
+            if (params.tz) {
+                console.log("-----------------tz----------------", params.tz)
+                momentObj.tz(params.tz);
             }
 
             if (max) {
