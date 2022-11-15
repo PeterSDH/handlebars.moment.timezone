@@ -253,18 +253,17 @@
             } else {
                 var momentFn = params.utc ? moment.utc : moment;
                 momentObj = momentFn(date, params.input);
-                // momentObj = momentFn(date, params.input).locale('zh-CN');
-                // momentObj = momentFn(date, params.input).locale('Asia/Shanghai');
+            }
+            const tz = params.tz || options.data.root.tz;
+            if (tz) {
+                momentObj.tz(tz);
             }
 
-            if (params.lang) {
-                momentObj.locale(params.lang);
+            const locale = params.lang || options.data.root.locale;
+            if (locale) {
+                momentObj.locale(locale);
             }
-            if (params.tz) {
-                console.log("-----------------tz----------------", params.tz)
-                momentObj.tz(params.tz);
-            }
-
+            
             if (max) {
                 momentObj = moment.max(moment(max), momentObj);
             }

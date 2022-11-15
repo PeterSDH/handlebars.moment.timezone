@@ -1,7 +1,7 @@
 {
     "name": "handlebars.moment.timezone",
     "description": "Handlebars helpers for moment.js & add timezone setting",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "main": "handlebars.moment.js",
     "repository": {
         "type": "https",

@@ -2,11 +2,11 @@
 
     {{moment}}
 
-Content helpers providing [Moment.js](http://momentjs.com) functionality for [Handlebars](http://handlebarsjs.com)
+Content helpers providing [Moment.js](http://momentjs.com),[Moment-TimeZone.js](http://momentjs.com/timezone) functionality for [Handlebars](http://handlebarsjs.com)
 
 ### Version
 
-1.0.0
+1.0.2
 
 ### Installation
 
@@ -45,6 +45,10 @@ Date timezone
 
     {{moment dstr utc=true}}
     {{moment dstr local=true}}
+    {{moment tz="**timezone**"}}
+
+Date locale
+    {{moment locale="**locale**"}}
 
 Date units
 
